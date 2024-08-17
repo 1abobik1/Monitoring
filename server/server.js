@@ -7,6 +7,17 @@ const app = express();
 const port = 3000;
 let clients = {};
 
+function ensureScreenshotsDirectoryExists() {
+    const screenshotsDir = path.join(__dirname, 'screenshots');
+    if (!fs.existsSync(screenshotsDir)) {
+        fs.mkdirSync(screenshotsDir, { recursive: true });
+        console.log('Screenshots directory created.');
+    }
+}
+
+ensureScreenshotsDirectoryExists();
+
+
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 const storage = multer.diskStorage({
